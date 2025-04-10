@@ -8,7 +8,7 @@ const Classification = ({ imc }) => {
         if(valorIMC < 18.5){
             return {texto: "Você está abaixo do peso", cor:"#ff66ff"};
         }
-        else if (valorIMC < 25) {
+        else if (valorIMC < 25) {//else if faz com que o código evite muitos testes de condição
             return {texto: "Você está com o peso ideal", cor:"#ff66ff"};
         }
         else if (valorIMC < 30) {
@@ -28,11 +28,11 @@ const Classification = ({ imc }) => {
     const classificacao = classificarIMC(valorIMC);//classificação está recebendo a função classificarIMC que tem como parâmetro o valor do imc
 
     return (
-        <View style={styles.container}>//cuida da cor do componente classid=ficação
+        <View style={styles.container}>
             <Text style={styles.texto}>
                 Classificação: {classificacao.texto}
             </Text>
-        </View>
+        </View>//cuida das coisas que poderão ser visualizadas
     );
 };
 //ESTILIZAÇÃO
